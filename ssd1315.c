@@ -185,25 +185,25 @@ int32_t SSD1315_Init(SSD1315_Object_t *pObj, uint32_t ColorCoding, uint32_t Orie
       (void)SSD1315_IO_Delay(pObj, 100);
       /* Driving ability setting */
       data = SSD1315_READWRITE_CMD;
-      ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+      ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
       data = SSD1315_CHARGE_PUMP_SETTING;
-      ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+      ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
       data = SSD1315_HIGHER_COLUMN_START_ADRESS_5;
-      ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+      ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
       data = SSD1315_MEMORY_ADRESS_MODE;
-      ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+      ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
       data = SSD1315_LOWER_COLUMN_START_ADRESS;
-      ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+      ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
       data = SSD1315_DISPLAY_START_LINE_1;
-      ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+      ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
       data = SSD1315_REMAPPED_MODE;
-      ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+      ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
       data = SSD1315_CONTRAST_CONTROL;
-      ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+      ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
       data = SSD1315_DISPLAY_ON;
-      ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+      ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
       ssd1315_Clear(SSD1315_COLOR_BLACK);
-      ret += ssd1315_write_reg(&pObj->Ctx, 1, PhysFrameBuffer,  SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_NUMBER);
+      ret += ssd1315_write_reg(&pObj->Ctx, 0x40u, PhysFrameBuffer,  SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_NUMBER);
     }
     else
     {
@@ -265,11 +265,11 @@ int32_t SSD1315_DisplayOn(SSD1315_Object_t *pObj)
   int32_t ret = SSD1315_OK;
   uint8_t data;
   data = SSD1315_CHARGE_PUMP_SETTING;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = SSD1315_HIGHER_COLUMN_START_ADRESS_5;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = SSD1315_DISPLAY_ON;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
 
   if (ret != SSD1315_OK)
   {
@@ -289,11 +289,11 @@ int32_t SSD1315_DisplayOff(SSD1315_Object_t *pObj)
   uint8_t data;
 
   data = SSD1315_CHARGE_PUMP_SETTING;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = SSD1315_HIGHER_COLUMN_START_ADRESS_1;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = SSD1315_DISPLAY_OFF;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
 
   if (ret != SSD1315_OK)
   {
@@ -386,20 +386,20 @@ int32_t SSD1315_Refresh(SSD1315_Object_t *pObj)
   uint8_t data;
 
   data = SSD1315_DISPLAY_START_LINE_1;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
   data = SSD1315_SET_COLUMN_ADRESS;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
   data = SSD1315_LOWER_COLUMN_START_ADRESS;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
   data = SSD1315_DISPLAY_START_LINE_64;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
   data = SSD1315_SET_PAGE_ADRESS;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
   data = SSD1315_LOWER_COLUMN_START_ADRESS;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
   data = SSD1315_LOWER_COLUMN_START_ADRESS_15;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1,&data, 1);
-  ret += ssd1315_write_reg(&pObj->Ctx, 1,PhysFrameBuffer, SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_NUMBER);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u,&data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0x40u,PhysFrameBuffer, SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_NUMBER);
 
   if (ret != SSD1315_OK)
   {
@@ -844,7 +844,7 @@ int32_t SSD1315_SetPage(SSD1315_Object_t *pObj, uint16_t Page)
 
   /* Set Page position  */
   data = (SSD1315_SET_PAGE_START_ADRESS | Page);
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
 
   if (ret != SSD1315_OK)
   {
@@ -866,11 +866,11 @@ int32_t SSD1315_SetColumn(SSD1315_Object_t *pObj, uint16_t Column)
   /* Set Column position  */
 
   data = SSD1315_LOWER_COLUMN_START_ADRESS;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = (SSD1315_LOWER_COLUMN_START_ADRESS | Column);
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = SSD1315_DISPLAY_START_LINE_32;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
 
   if (ret != SSD1315_OK)
   {
@@ -898,19 +898,19 @@ int32_t SSD1315_ScrollingSetup(SSD1315_Object_t *pObj, uint16_t ScrollMode, uint
 
   /* Scrolling setup sequence */
   data = ScrollMode;                                     /* Right/Left Horizontal Scroll */
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = SSD1315_LOWER_COLUMN_START_ADRESS;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = StartPage;                                      /* start page address*/
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = Frequency;                                      /* Frequency*/
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = EndPage;                                        /* End page address*/
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = SSD1315_LOWER_COLUMN_START_ADRESS;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
   data = SSD1315_CONTRAST_CONTROL_2;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
 
   if (ret != SSD1315_OK)
   {
@@ -931,7 +931,7 @@ int32_t SSD1315_ScrollingStart(SSD1315_Object_t *pObj)
 
   /* Start scrolling sequence */
   data = SSD1315_ACTIVATE_SCROLL;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
 
   if (ret != SSD1315_OK)
   {
@@ -952,7 +952,7 @@ int32_t SSD1315_ScrollingStop(SSD1315_Object_t *pObj)
 
   /* Stop scrolling  sequence */
   data = SSD1315_DESACTIVATE_SCROLL;
-  ret += ssd1315_write_reg(&pObj->Ctx, 1, &data, 1);
+  ret += ssd1315_write_reg(&pObj->Ctx, 0u, &data, 1);
 
   if (ret != SSD1315_OK)
   {
