@@ -113,7 +113,6 @@ __align(16) uint8_t  PhysFrameBuffer[SSD1315_LCD_COLUMN_NUMBER*SSD1315_LCD_PAGE_
 static int32_t SSD1315_ReadRegWrap(void *handle, uint16_t Reg, uint8_t* pData, uint16_t Length);
 static int32_t SSD1315_WriteRegWrap(void *handle, uint16_t Reg, uint8_t* pData, uint16_t Length);
 static int32_t SSD1315_IO_Delay(SSD1315_Object_t *pObj, uint32_t Delay);
-static void ssd1315_Clear(uint16_t ColorCode);
 /**
 * @}
 */
@@ -996,7 +995,7 @@ static int32_t SSD1315_WriteRegWrap(void *handle, uint16_t Reg, uint8_t* pData, 
   * @param  ColorCode the color use to clear the screen (SSD1315_COLOR_WHITE or SSD1315_COLOR_BLACK).
   * @retval None
   */
-static void ssd1315_Clear(uint16_t ColorCode)
+void ssd1315_Clear(uint16_t ColorCode)
 {
   /* Check color */
   if (ColorCode == SSD1315_COLOR_WHITE)
