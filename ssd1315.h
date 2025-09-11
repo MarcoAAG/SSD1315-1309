@@ -155,6 +155,7 @@ int32_t SSD1315_GetBrightness(SSD1315_Object_t *pObj, uint32_t *Brightness);
 int32_t SSD1315_SetOrientation(SSD1315_Object_t *pObj, uint32_t Orientation);
 int32_t SSD1315_GetOrientation(SSD1315_Object_t *pObj, uint32_t *Orientation);
 int32_t SSD1315_Refresh(SSD1315_Object_t *pObj);
+void ssd1315_Clear(uint16_t ColorCode);
 
 int32_t SSD1315_SetPage(SSD1315_Object_t *pObj, uint16_t Page);
 int32_t SSD1315_SetColumn(SSD1315_Object_t *pObj, uint16_t Column);
