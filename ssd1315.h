@@ -147,13 +147,8 @@ typedef struct
 int32_t SSD1315_RegisterBusIO(SSD1315_Object_t *pObj, SSD1315_IO_t *pIO);
 int32_t SSD1315_Init(SSD1315_Object_t *pObj, uint32_t ColorCoding, uint32_t Orientation);
 int32_t SSD1315_DeInit(SSD1315_Object_t *pObj);
-int32_t SSD1315_ReadID(SSD1315_Object_t *pObj, uint32_t *Id);
 int32_t SSD1315_DisplayOn(SSD1315_Object_t *pObj);
 int32_t SSD1315_DisplayOff(SSD1315_Object_t *pObj);
-int32_t SSD1315_SetBrightness(SSD1315_Object_t *pObj, uint32_t Brightness);
-int32_t SSD1315_GetBrightness(SSD1315_Object_t *pObj, uint32_t *Brightness);
-int32_t SSD1315_SetOrientation(SSD1315_Object_t *pObj, uint32_t Orientation);
-int32_t SSD1315_GetOrientation(SSD1315_Object_t *pObj, uint32_t *Orientation);
 int32_t SSD1315_Refresh(SSD1315_Object_t *pObj);
 void ssd1315_Clear(uint16_t ColorCode);
 
@@ -163,7 +158,6 @@ int32_t SSD1315_ScrollingSetup(SSD1315_Object_t *pObj, uint16_t ScrollMode, uint
 int32_t SSD1315_ScrollingStart(SSD1315_Object_t *pObj);
 int32_t SSD1315_ScrollingStop(SSD1315_Object_t *pObj);
 
-int32_t SSD1315_SetCursor(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos);
 int32_t SSD1315_DrawBitmap(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pBmp);
 int32_t SSD1315_ShiftBitmap(SSD1315_Object_t *pObj,uint16_t Xpos, uint16_t Ypos, int16_t Xshift, int16_t Yshift, uint8_t *pbmp);
 int32_t SSD1315_FillRGBRect(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pData, uint32_t Width, uint32_t Height);

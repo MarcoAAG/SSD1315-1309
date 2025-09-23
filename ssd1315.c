@@ -65,20 +65,14 @@ SSD1315_Drv_t   SSD1315_Driver =
 {
   SSD1315_Init,
   SSD1315_DeInit,
-  SSD1315_ReadID,
   SSD1315_DisplayOn,
   SSD1315_DisplayOff,
-  SSD1315_SetBrightness,
-  SSD1315_GetBrightness,
-  SSD1315_SetOrientation,
-  SSD1315_GetOrientation,
   SSD1315_Refresh,
   SSD1315_SetPage,
   SSD1315_SetColumn,
   SSD1315_ScrollingSetup,
   SSD1315_ScrollingStart,
   SSD1315_ScrollingStop,
-  SSD1315_SetCursor,
   SSD1315_DrawBitmap,
   SSD1315_ShiftBitmap,
   SSD1315_FillRGBRect,
@@ -241,20 +235,6 @@ int32_t SSD1315_DeInit(SSD1315_Object_t *pObj)
 }
 
 /**
-  * @brief  Get the SSD1315 ID.
-  * @param  pObj Component object.
-  * @param  Id Component ID.
-  * @retval The component status.
-  */
-int32_t SSD1315_ReadID(SSD1315_Object_t *pObj, uint32_t *Id)
-{
-  /* Feature not supported */
-  (void)pObj;
-  (void)Id;
-  return SSD1315_ERROR;
-}
-
-/**
   * @brief  Enables the Display.
   * @param  pObj Component object.
   * @retval The component status.
@@ -299,78 +279,6 @@ int32_t SSD1315_DisplayOff(SSD1315_Object_t *pObj)
     ret = SSD1315_ERROR;
   }
   return ret;
-}
-
-/**
-  * @brief  Set the display brightness.
-  * @param  pObj Component object.
-  * @param  Brightness display brightness to be set.
-  * @retval Component status.
-  */
-int32_t SSD1315_SetBrightness(SSD1315_Object_t *pObj, uint32_t Brightness)
-{
-  /* Feature not supported */
-  (void)pObj;
-  (void)Brightness;
-  return SSD1315_ERROR;
-}
-
-/**
-  * @brief  Get the display brightness.
-  * @param  pObj Component object.
-  * @param  Brightness display brightness to be returned.
-  * @retval Component status.
-  */
-int32_t SSD1315_GetBrightness(SSD1315_Object_t *pObj, uint32_t *Brightness)
-{
-  /* Feature not supported */
-  (void)pObj;
-  (void)Brightness;
-  return SSD1315_ERROR;
-}
-
-/**
-  * @brief  Set the Display Orientation.
-  * @param  pObj Component object.
-  * @param  Orientation SSSD1315_ORIENTATION_LANDSCAPE.
-  * @retval The component status.
-  */
-int32_t SSD1315_SetOrientation(SSD1315_Object_t *pObj, uint32_t Orientation)
-{
-  /* Feature not supported */
-  (void)pObj;
-  (void)Orientation;
-  return SSD1315_ERROR;
-}
-
-/**
-  * @brief  Set the Display Orientation.
-  * @param  pObj Component object.
-  * @param  Orientation SSD1315_ORIENTATION_LANDSCAPE.
-  * @retval The component status.
-  */
-int32_t SSD1315_GetOrientation(SSD1315_Object_t *pObj, uint32_t *Orientation)
-{
-  /* Feature not supported */
-  (void)pObj;
-  (void)Orientation;
-  return SSD1315_ERROR;
-}
-
-/**
-  * @brief  Set Cursor position.
-  * @param  pObj Component object.
-  * @param  Xpos specifies the X position.
-  * @param  Ypos specifies the Y position.
-  * @retval The component status.
-  */
-int32_t SSD1315_SetCursor(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos)
-{
- /* Feature not supported */
- (void)pObj;
- (void)Xpos;
- (void)Ypos;
- return SSD1315_ERROR;
 }
 
 /**
