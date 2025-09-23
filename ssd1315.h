@@ -132,12 +132,6 @@ typedef struct
 #define SSD1315_ORIENTATION_LANDSCAPE        0x00U /* Landscape orientation choice of LCD screen              */
 
 /**
-  *  @brief LCD_Format
-  *  Possible values of Display format
-  */
-#define SSD1315_FORMAT_DEFAULT               0x00U
-
-/**
   * @}
   */
 
@@ -163,7 +157,6 @@ int32_t SSD1315_ShiftBitmap(SSD1315_Object_t *pObj,uint16_t Xpos, uint16_t Ypos,
 int32_t SSD1315_FillRGBRect(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pData, uint32_t Width, uint32_t Height);
 int32_t SSD1315_DrawHLine(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t Length, uint32_t Color);
 int32_t SSD1315_DrawVLine(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t Length, uint32_t Color);
-int32_t SSD1315_DrawLine(SSD1315_Object_t *pObj, uint32_t X1pos, uint32_t Y1pos, uint32_t X2pos, uint32_t Y2pos, uint32_t Color);
 int32_t SSD1315_FillRect(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t Width, uint32_t Height, uint32_t Color);
 int32_t SSD1315_SetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t Color);
 int32_t SSD1315_GetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t *Color);
