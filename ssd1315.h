@@ -74,13 +74,8 @@ typedef struct
   /* Control functions */
   int32_t (*Init             )(SSD1315_Object_t*, uint32_t, uint32_t);
   int32_t (*DeInit           )(SSD1315_Object_t*);
-  int32_t (*ReadID           )(SSD1315_Object_t*, uint32_t*);
   int32_t (*DisplayOn        )(SSD1315_Object_t*);
   int32_t (*DisplayOff       )(SSD1315_Object_t*);
-  int32_t (*SetBrightness    )(SSD1315_Object_t*, uint32_t);
-  int32_t (*GetBrightness    )(SSD1315_Object_t*, uint32_t*);
-  int32_t (*SetOrientation   )(SSD1315_Object_t*, uint32_t);
-  int32_t (*GetOrientation   )(SSD1315_Object_t*, uint32_t*);
   int32_t (*Refresh          )(SSD1315_Object_t*);
   int32_t (*SetPage          )(SSD1315_Object_t*, uint16_t);
   int32_t (*SetColumn        )(SSD1315_Object_t*, uint16_t);
@@ -89,7 +84,6 @@ typedef struct
   int32_t (*ScrollingStop    )(SSD1315_Object_t*);
 
   /* Drawing functions*/
-  int32_t ( *SetCursor       ) (SSD1315_Object_t*, uint32_t, uint32_t);
   int32_t ( *DrawBitmap      ) (SSD1315_Object_t*, uint32_t, uint32_t, uint8_t *);
   int32_t ( *ShiftBitmap     ) (SSD1315_Object_t*,uint16_t, uint16_t, int16_t, int16_t, uint8_t*);
   int32_t ( *FillRGBRect     ) (SSD1315_Object_t*, uint32_t, uint32_t, uint8_t*, uint32_t, uint32_t);
@@ -163,7 +157,6 @@ int32_t SSD1315_ShiftBitmap(SSD1315_Object_t *pObj,uint16_t Xpos, uint16_t Ypos,
 int32_t SSD1315_FillRGBRect(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint8_t *pData, uint32_t Width, uint32_t Height);
 int32_t SSD1315_DrawHLine(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t Length, uint32_t Color);
 int32_t SSD1315_DrawVLine(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t Length, uint32_t Color);
-int32_t SSD1315_DrawLine(SSD1315_Object_t *pObj, uint32_t X1pos, uint32_t Y1pos, uint32_t X2pos, uint32_t Y2pos, uint32_t Color);
 int32_t SSD1315_FillRect(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t Width, uint32_t Height, uint32_t Color);
 int32_t SSD1315_SetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t Color);
 int32_t SSD1315_GetPixel(SSD1315_Object_t *pObj, uint32_t Xpos, uint32_t Ypos, uint32_t *Color);
