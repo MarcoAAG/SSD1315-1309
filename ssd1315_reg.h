@@ -96,6 +96,12 @@
 #define  SSD1315_SET_PAGE_START_ADRESS          0xB0
 
 /**
+  * @brief  SSD1315 REG COMMAND
+  */
+#define  SSD1315_REG_CONTROL            0x00u
+#define  SSD1315_REG_DATA               0x40u
+
+/**
   * @}
   */
 
